@@ -100,7 +100,7 @@ https://batch.1key.me
 
 ## Quick Start
 
-### Homebrew (macOS / Linux)
+### Homebrew (macOS Apple Silicon)
 
 ```bash
 # Add the tap
@@ -114,10 +114,10 @@ anti-api
 ```
 
 Notes:
-- This formula installs Bun dependencies and prebuilds the Rust proxy during `brew install`.
+- This formula installs a prebuilt macOS Apple Silicon bundle. It does not download Rust, LLVM, or Bun at install time.
 - Upgrade with `brew upgrade anti-api`.
 - `bun run brew:formula` is a maintainer command that refreshes `Formula/anti-api.rb` for the current tagged release.
-- Local maintainer install remains available with `brew install --formula ./Formula/anti-api.rb`.
+- `bun run brew:bundle` is a maintainer command that builds the release asset consumed by Homebrew.
 - `anti-api --update` is intentionally disabled for Homebrew-managed installs so Homebrew remains the source of truth.
 - After installation, `anti-api` starts the service directly in any terminal.
 
@@ -456,7 +456,7 @@ MIT
 
 ## 快速开始
 
-### Homebrew（macOS / Linux）
+### Homebrew（macOS Apple Silicon）
 
 ```bash
 # 添加 tap
@@ -470,10 +470,10 @@ anti-api
 ```
 
 说明：
-- 该 formula 会在安装时执行 `bun install`，并预编译 Rust proxy。
+- 该 formula 直接安装预编译的 macOS Apple Silicon 包，安装时不会再下载 Rust、LLVM 或 Bun。
 - 升级直接使用 `brew upgrade anti-api`。
 - `bun run brew:formula` 是维护者命令，用于按当前 tag 版本刷新 `Formula/anti-api.rb`。
-- 维护者仍可使用 `brew install --formula ./Formula/anti-api.rb` 做本地 formula 安装。
+- `bun run brew:bundle` 是维护者命令，用于构建 Homebrew 依赖的发布包。
 - Homebrew 安装会禁用 `anti-api --update`，避免和 Homebrew 的包管理冲突。
 - 安装完成后，在任意终端输入 `anti-api` 会直接启动服务。
 

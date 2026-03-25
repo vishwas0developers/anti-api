@@ -38,7 +38,7 @@ anti-api
 
 ## Notes
 
-- The formula installs Bun dependencies and prebuilds the Rust proxy during `brew install`.
+- The formula installs a prebuilt macOS Apple Silicon bundle. It does not download Rust, LLVM, or Bun at install time.
 - In-app self-update is disabled for Homebrew-managed installs. Use `brew upgrade anti-api` instead.
 - Formula source of truth: `Formula/anti-api.rb` from the main Anti-API repository.
 EOF
