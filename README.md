@@ -109,7 +109,7 @@ brew tap ink1ing/anti-api
 # Install Anti-API
 brew install anti-api
 
-# Start Anti-API
+# Start Anti-API directly from any terminal
 anti-api
 ```
 
@@ -465,7 +465,7 @@ brew tap ink1ing/anti-api
 # 安装 Anti-API
 brew install anti-api
 
-# 启动 Anti-API
+# 在任意终端直接启动 Anti-API
 anti-api
 ```
 
