@@ -89,6 +89,26 @@ https://batch.1key.me
 
 ## Quick Start
 
+### Homebrew (macOS / Linux)
+
+```bash
+# Add the tap
+brew tap ink1ing/anti-api
+
+# Install Anti-API
+brew install anti-api
+
+# Start Anti-API
+anti-api
+```
+
+Notes:
+- This formula installs Bun dependencies and prebuilds the Rust proxy during `brew install`.
+- Upgrade with `brew upgrade anti-api`.
+- `bun run brew:formula` is a maintainer command that refreshes `Formula/anti-api.rb` for the current tagged release.
+- Local maintainer install remains available with `brew install --formula ./Formula/anti-api.rb`.
+- `anti-api --update` is intentionally disabled for Homebrew-managed installs so Homebrew remains the source of truth.
+
 ### Linux
 
 ```bash
@@ -105,7 +125,7 @@ Double-click `start.bat` to launch.
 
 ### macOS
 
-Double-click `anti-api-start.command` to launch.
+Double-click `start.command` to launch.
 
 ### Docker
 
@@ -401,6 +421,36 @@ MIT
 - **当前不支持的能力** - 不能像 Codex/Copilot 一样，直接从一台机器上自动批量发现多个 Zed 本地账号
 - **额度监控说明** - Zed 的 hosted models 共用同一个月度消耗池。Anti-API 当前展示的是 hosted access 状态和订阅周期，不是精确的剩余美元额度
 - **Credit 说明** - Zed 的月度 credit 取决于具体计划类型。例如 Zed Student 官方说明为每月 $10 AI token credits，而普通 Pro 页面可能显示不同额度
+
+## 快速开始
+
+### Homebrew（macOS / Linux）
+
+```bash
+# 添加 tap
+brew tap ink1ing/anti-api
+
+# 安装 Anti-API
+brew install anti-api
+
+# 启动 Anti-API
+anti-api
+```
+
+说明：
+- 该 formula 会在安装时执行 `bun install`，并预编译 Rust proxy。
+- 升级直接使用 `brew upgrade anti-api`。
+- `bun run brew:formula` 是维护者命令，用于按当前 tag 版本刷新 `Formula/anti-api.rb`。
+- 维护者仍可使用 `brew install --formula ./Formula/anti-api.rb` 做本地 formula 安装。
+- Homebrew 安装会禁用 `anti-api --update`，避免和 Homebrew 的包管理冲突。
+
+### Windows
+
+双击 `start.bat` 启动。
+
+### macOS
+
+双击 `start.command` 启动。
 
 ## 开发规范
 

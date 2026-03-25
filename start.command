@@ -39,6 +39,15 @@ for arg in "$@"; do
 done
 
 do_update() {
+    if [ "${ANTI_API_NO_SELF_UPDATE:-0}" = "1" ] || [ "${ANTI_API_PACKAGE_MANAGER:-}" = "homebrew" ]; then
+        if [ "${ANTI_API_PACKAGE_MANAGER:-}" = "homebrew" ]; then
+            echo "This installation is managed by Homebrew. Run: brew upgrade anti-api"
+        else
+            echo "Self-update is disabled for this installation."
+        fi
+        return 0
+    fi
+
     if ! command -v curl >/dev/null 2>&1; then
         echo "[错误] 缺少 curl，无法自动更新"
         return 1

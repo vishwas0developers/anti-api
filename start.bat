@@ -5,7 +5,7 @@ cd /d "%~dp0"
 
 set "PORT=8964"
 set "RUST_PROXY_PORT=8965"
-set "RUST_PROXY_BIN=src-rust\target\release\anti-proxy.exe"
+set "RUST_PROXY_BIN=rust-proxy\target\release\anti-proxy.exe"
 set "PID_DIR=%USERPROFILE%\.anti-api"
 set "ANTI_API_PID=%PID_DIR%\anti-api.pid"
 set "RUST_PID_FILE=%PID_DIR%\rust-proxy.pid"
@@ -64,7 +64,7 @@ call :cleanup_existing_processes
 echo Building Rust proxy...
 bun x tsc >nul
 if errorlevel 1 goto :error
-cargo build --release --manifest-path src-rust/Cargo.toml
+cargo build --release --manifest-path rust-proxy/Cargo.toml
 if errorlevel 1 goto :error
 
 if not exist "%RUST_PROXY_BIN%" (

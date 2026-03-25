@@ -7,7 +7,9 @@
     "dev": "bun run --watch src/main.ts start",
     "start": "bun run src/main.ts start",
     "build": "bun build src/main.ts --outdir dist --target bun",
-    "test": "bun test ./test --test-concurrency 1"
+    "test": "bun test ./test --test-concurrency 1",
+    "brew:formula": "bun run scripts/update-homebrew-formula.ts",
+    "brew:tap:sync": "bash scripts/sync-homebrew-tap.sh"
   },
   "dependencies": {
     "@bufbuild/protobuf": "^2.2.3",
