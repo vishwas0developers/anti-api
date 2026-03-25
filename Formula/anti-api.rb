@@ -1,8 +1,8 @@
 class AntiApi < Formula
   desc "Local OpenAI/Anthropic-compatible proxy for Antigravity, Codex, Copilot, and Zed"
   homepage "https://github.com/ink1ing/anti-api"
-  url "https://github.com/ink1ing/anti-api/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "61ee7bbc27a9610e78021a2a570cb7b28ad9398a8e9a182ca8beeaceb7e33008"
+  url "https://github.com/ink1ing/anti-api/archive/refs/tags/v2.9.0.tar.gz"
+  sha256 "2bbaccc535d1df16097e800d06259379b9d0cb295a8a6f6134aaab1147490644"
   license "MIT"
   head "https://github.com/ink1ing/anti-api.git", branch: "main"
 
