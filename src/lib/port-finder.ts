@@ -26,6 +26,11 @@ export interface LanguageServerInfo {
  * 从进程列表获取language_server信息，并通过lsof找到HTTPS端口
  */
 export async function getLanguageServerInfo(): Promise<LanguageServerInfo | null> {
+    // Skip on Windows - this is macOS-specific functionality
+    if (process.platform === 'win32') {
+        return null
+    }
+    
     try {
         // Step 1: 获取 language_server 进程信息
         const { stdout: psOutput } = await execAsync(
@@ -104,6 +109,11 @@ export async function getLanguageServerInfo(): Promise<LanguageServerInfo | null
 export async function findLanguageServerForWorkspace(
     workspacePath?: string
 ): Promise<LanguageServerInfo | null> {
+    // Skip on Windows - this is macOS-specific functionality
+    if (process.platform === 'win32') {
+        return null
+    }
+    
     try {
         const { stdout: psOutput } = await execAsync(
             'ps aux | grep "language_server_macos_arm" | grep -v grep'
