@@ -41,3 +41,6 @@ cookies_*.json
 *.sqlite3-*
 *.db-*
 *.db3-*
+
+# Additional protection for previously ignored paths.
+.env*
